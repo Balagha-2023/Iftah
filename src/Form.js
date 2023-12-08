@@ -1,21 +1,28 @@
 import { Button, TextField } from "@mui/material";
 import React, { useState } from "react";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
 
 const Form = () => {
   const [inputs, setInputs] = useState({
     name: "",
     email: "",
     password: "",
+    subscribe: false,
   });
 
   const handleChange = (e) => {
-    setInputs((prevState) => ({...prevState, [e.target.name]: e.target.value }));
-  }
+    setInputs((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
- const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(inputs)
- }
+    console.log(inputs);
+  };
 
   return (
     <div>
@@ -31,7 +38,7 @@ const Form = () => {
         <TextField
           name="email"
           value={inputs.email}
-          onChange={handleChange}          
+          onChange={handleChange}
           type="email"
           placeholder="Email"
           sx={{ margin: "3px" }}
@@ -44,6 +51,17 @@ const Form = () => {
           placeholder="Password"
           sx={{ margin: "3px" }}
         />
+
+        <FormGroup>
+          <FormControlLabel
+            control={
+              <Checkbox onChange={() => setInputs((...prev)=> ({...prev, subscribe: !inputs.subscribe}) )}
+                
+              />
+            }
+            label="Subscribes To Newsletter"
+          />
+        </FormGroup>
 
         <Button type="submit"> Submit </Button>
       </form>
