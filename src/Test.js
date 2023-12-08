@@ -1,36 +1,42 @@
-import React from "react";
-import { Button } from "@mui/material";
+// import React, { useState } from "react";
+// import { TextField, Typography } from "@mui/material";
 
-const Test = () => {
-  return (
-    <div>
-      <Button
-        onClick={()=> alert("Button clicked")}
-        
-        color="success"
-        sx={{ margin: "3px" }}
-        size="large"
-        variant="contained"
-      >
-        First
-      </Button>
-      <Button
-      onClick={()=> alert("Button clicked")}
-        color="error"
-        sx={{ margin: "3px" }}
-        size="medium"
-        variant="outlined"
-      >
-        Second
-      </Button>
-      <Button
-      onClick={()=> alert("Button clicked")}
+// const Test = () => {
+
+//   const [name, setName] = useState("")
+//   return (
+//     <div>
+//       <TextField
+//       value={name} onChange={(e) => setName(e.target.value)}
       
-      color="info" sx={{ margin: "3px" }} size="Small" variant="" Text>
-        Third
-      </Button>
-    </div>
-  );
-};
+//       sx={{margin: "3px"}}
+//         placeholder="Name"
+//         variant="standard"
+//       >
+//         First
+//       </TextField>
+//       <TextField
+//       sx={{margin: "3px"}}
 
-export default Test;
+//         placeholder="email"
+        
+//         variant="outlined"
+//       >
+//         Second
+//       </TextField>
+//       <TextField
+//       sx={{margin: "3px"}}
+
+//         placeholder="age"
+        
+//         variant="filled"
+//       >
+//         Third
+//       </TextField>
+
+//       <Typography> {name} </Typography>
+//     </div>
+//   );
+// };
+
+// export default Test;
