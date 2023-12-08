@@ -1,13 +1,36 @@
-import React from 'react'
-import { Typography } from '@mui/material'
+import React from "react";
+import { Button } from "@mui/material";
 
 const Test = () => {
   return (
     <div>
-        <Typography variant='h6' sx={{color: "red", border: "1px solid black" , borderRadius: "10px" }}> Hello  Typography</Typography>
-
+      <Button
+        onClick={()=> alert("Button clicked")}
+        
+        color="success"
+        sx={{ margin: "3px" }}
+        size="large"
+        variant="contained"
+      >
+        First
+      </Button>
+      <Button
+      onClick={()=> alert("Button clicked")}
+        color="error"
+        sx={{ margin: "3px" }}
+        size="medium"
+        variant="outlined"
+      >
+        Second
+      </Button>
+      <Button
+      onClick={()=> alert("Button clicked")}
+      
+      color="info" sx={{ margin: "3px" }} size="Small" variant="" Text>
+        Third
+      </Button>
     </div>
-  )
-}
+  );
+};
 
-export default Test
+export default Test;
