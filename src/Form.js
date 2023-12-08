@@ -12,11 +12,14 @@ const Form = () => {
     setInputs((prevState) => ({...prevState, [e.target.name]: e.target.value }));
   }
 
+ const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(inputs)
+ }
 
-  
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <TextField
           name="name"
           value={inputs.name}
