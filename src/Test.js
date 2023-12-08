@@ -4,7 +4,8 @@ import { Typography } from '@mui/material'
 const Test = () => {
   return (
     <div>
-        <Typography> Hello  Typography</Typography>
+        <Typography variant='h6' sx={{color: "red", border: "1px solid black" , borderRadius: "10px" }}> Hello  Typography</Typography>
+
     </div>
   )
 }
