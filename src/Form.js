@@ -1,8 +1,13 @@
-import { Button, TextField } from "@mui/material";
+import { Button, FormControl, TextField } from "@mui/material";
 import React, { useState } from "react";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+
 
 const Form = () => {
   const [inputs, setInputs] = useState({
@@ -10,6 +15,7 @@ const Form = () => {
     email: "",
     password: "",
     subscribe: false,
+    age: 0,
   });
 
   const handleChange = (e) => {
@@ -26,7 +32,12 @@ const Form = () => {
 
   return (
     <div>
-      <form style={{ display: "flex", flexDirection: "column"}} onSubmit={handleSubmit}>
+      <form
+        style={{ display: "flex", flexDirection: "column" }}
+        onSubmit={handleSubmit}
+      > 
+      {/* Text Input -------------------------------------- */}
+
         <TextField
           name="name"
           value={inputs.name}
@@ -52,18 +63,37 @@ const Form = () => {
           sx={{ margin: "3px" }}
         />
 
+          {/* CheckBox Input -------------------------------------- */}
         <FormGroup>
           <FormControlLabel
             control={
-              <Checkbox onChange={() => setInputs((...prev)=> ({...prev, subscribe: !inputs.subscribe}) )}
-                
+              <Checkbox
+                onChange={() =>
+                  setInputs((...prev) => ({
+                    ...prev,
+                    subscribe: !inputs.subscribe,
+                  }))
+                }
               />
             }
             label="Subscribes To Newsletter"
           />
         </FormGroup>
 
+      {/* DropDown Input -------------------------------------- */}
+
+        <FormControl fullWidth>
+          <InputLabel >Age</InputLabel>
+          <Select name="age" value={inputs.age} label="Age" onChange={handleChange}
+          >
+            <MenuItem value={10}>Ten</MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+            <MenuItem value={30}>Thirty</MenuItem>
+          </Select>
+        </FormControl>
+        
         <Button type="submit"> Submit </Button>
+
       </form>
     </div>
   );
