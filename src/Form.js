@@ -16,7 +16,7 @@ const Form = () => {
     email: "",
     password: "",
     subscribe: false,
-    age: undefined,
+    age: 10,
     gender:"",
   });
 
