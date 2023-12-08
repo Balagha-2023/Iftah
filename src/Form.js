@@ -99,7 +99,7 @@ const Form = () => {
   <FormLabel >Gender</FormLabel>
 
   <RadioGroup
-    defaultValue="female"
+    // defaultValue="female"
     onChange={handleChange}
     name="gender"
   >
