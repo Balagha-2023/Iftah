@@ -26,7 +26,7 @@ const Form = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form style={{ display: "flex", flexDirection: "column"}} onSubmit={handleSubmit}>
         <TextField
           name="name"
           value={inputs.name}
