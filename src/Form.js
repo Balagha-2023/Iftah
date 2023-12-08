@@ -1,4 +1,4 @@
-import { Button, FormControl, TextField } from "@mui/material";
+import { Button, FormControl, FormLabel, Radio, RadioGroup, TextField } from "@mui/material";
 import React, { useState } from "react";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -6,7 +6,8 @@ import Checkbox from "@mui/material/Checkbox";
 
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
+// import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 
 const Form = () => {
@@ -15,7 +16,8 @@ const Form = () => {
     email: "",
     password: "",
     subscribe: false,
-    age: 0,
+    age: undefined,
+    gender:"",
   });
 
   const handleChange = (e) => {
@@ -91,7 +93,22 @@ const Form = () => {
             <MenuItem value={30}>Thirty</MenuItem>
           </Select>
         </FormControl>
-        
+
+
+        <FormControl>
+  <FormLabel >Gender</FormLabel>
+
+  <RadioGroup
+    defaultValue="female"
+    onChange={handleChange}
+    name="gender"
+  >
+    <FormControlLabel value="female" control={<Radio />} label="Female" />
+    <FormControlLabel value="male" control={<Radio />} label="Male" />
+    <FormControlLabel value="other" control={<Radio />} label="Other" />
+  </RadioGroup>
+</FormControl>
+
         <Button type="submit"> Submit </Button>
 
       </form>
