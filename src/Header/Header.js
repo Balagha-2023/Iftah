@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Tabs, Box, Tab } from "@mui/material";
+import { AppBar, Toolbar, Tabs, Box, Tab, Button, Link } from "@mui/material";
 import ApiIcon from "@mui/icons-material/Api";
 
 const links = ["Iftah", "Product", "Solution", "Pricing", "Enterprice"];
@@ -16,13 +16,33 @@ const Header = () => {
             alignItems: "center",
           }}
         >
-          <ApiIcon sx={{ color: "black" }} /> 
+          <ApiIcon sx={{ color: "black" }} />
           <Box>
-            <Tabs>
+            <Tabs component={Link} sx={{ textDecoration: "none" }}>
               {links.map((link, index) => (
-                <Tab key={index} label={link} />
+                <Tab
+                  sx={{
+                    fontWaight: "bold",
+                    textDecoration: "none",
+                    ":hover": {
+                      textDecoration: "underline",
+                      textUnderLineOffset: "5px",
+                    },
+                  }}
+                  key={index}
+                  label={link}
+                />
               ))}
             </Tabs>
+          </Box>
+          <Box display="flex" marginLeft={"auto"}>
+            <Button sx={{ mr: 2 }} variant="outlined" color="primary">
+              Contact Us
+            </Button>
+
+            <Button sx={{ ml: 2 }} variant="contained" color="primary">
+              Try for free
+            </Button>
           </Box>
         </Box>
       </Toolbar>
