@@ -1,11 +1,11 @@
-import Form  from "./Form"
-import NavBar from "./NavigationBar";
+// import Form  from "./Form"
+// import NavBar from "./NavigationBar";
+import PrimarySearchAppBar from "./components/navbar/PrimarySearchAppBar"
 
 function App() {
   return (
     <div >
-      <NavBar/><br/>
-     <Form />
+     <PrimarySearchAppBar />
     </div>
   );
 }
