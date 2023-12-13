@@ -12,11 +12,11 @@ const Header = () => {
           sx={{
             display: "flex",
             width: "100%",
-            justifyContent: "center",
+            // justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <ApiIcon sx={{ color: "black" }} />
+          <ApiIcon sx={{ color: "black" }} /> 
           <Box>
             <Tabs>
               {links.map((link, index) => (
